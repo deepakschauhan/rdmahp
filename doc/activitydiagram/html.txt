@@ -1,0 +1,138 @@
+kis directroy main html file create krni hain
+app ki directroy main banegi
+ek new directroy (templates name ki) banayege aur uske ander forms name ki ek aur directroy banayege 
+
+ki directroy main (index.html) (alert.html) (base.html) (subscription.html)
+
+
+index.html code is
+
+{% extends "forms/base.html" %} (dusri html ko iss html main ese link krnege )
+{% block content %} (yaha index ka code start krne ke liye ese use krte hain)
+    <style>.btn{
+        margin-top:15px;
+        margin-left:475px;
+    }
+    </style>
+    <button class=btn style="padding:15px;" onclick="window.location.href='/forms/subscription/'">Subscription</button>
+    <div style="margin:20px"><center>
+    <img src="/static/image.png" /><br><br>
+    <img src="/static/intro.png" /><br><br>
+    <img src="/static/schedule.png" /><br><br>
+    <img src="/static/schedule1.png" /><br><br>
+    </center></div>
+    
+{% endblock %}
+
+base.html code is
+
+{% load static %} (main html file path use krne main ye file open hogi web main )
+<html>
+    <head>
+        <style>
+            body{
+                padding:0px;
+                margin:0px;
+                //background-color: #EFEFEF;
+                dispaly:relative;
+            }
+            body,table{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 14px;
+            }
+            input,textarea,select{
+                padding:5px;
+                width:100%
+            }
+            input[type="submit"]{
+                width:unset;
+                
+            }
+            table td{
+                padding:5px;
+            }
+            table th{
+                text-align: left;
+                width:20%;
+            }
+            .entryForm{
+                border:1px solid #DDD;
+                padding:20px;
+                background-color: #FFF;
+                width:600px;
+                margin:0 auto;
+                margin-top:50px;
+            }
+            .icon{
+                float:left;
+                //border:1px solid #DDD;
+                width:1px;
+                margin:20px 0px 0px 20px;
+            }
+            .icon1{
+                float:right;
+                dispaly:absolute:
+                //border:1px solid #DDD;
+                width:1px;
+                margin:20px 100px 20px 60px;
+                
+            }
+            .title{
+                //border:1px solid #DDD;
+                width:500px;
+                margin:0 auto;
+            }
+            .btn-black:hover
+            {
+                background-color:#000;color: #FFF;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="icon"><img src="/static/icon.png" /></div>
+        <div class="icon1"><img src="/static/icon1.png" /></div>
+        <div class="title">
+        <center style="font-size: 18px;">Workshop on</center>
+        <center style="color:red;font-size: 22px;">Role Of Doctors in Mass Awareness Health Program</center>
+        <center>Venue-Shantikunj,Hardwar (UK)</center>
+        <center>Date-11,12 April 2020</center></div>
+        {% block content %} (jo humra index.html main code add kiya hai iss use krne se vo code yaha present hoga)
+        {% endblock %}
+    </body>
+</html>
+
+
+subscription.html code is 
+
+{% extends "forms/base.html" %} (dusri html ko iss html main ese link krnege )
+{% block content %}
+
+    <form class="entryForm" action="/forms/subscription/add/" method="post">
+        <center>
+        <div style="width:30%;"><b><center style="border:1px solid black; margin-bottom:15px; padding:07px;" >Registration Form</b></div></center>
+        <p style="margin-bottom:15px;">(Kindly provide your e mail and mobile number for future communication via sms/email) </p>
+        
+        {% csrf_token %}
+        <table width="100%">
+        {{ form }}
+        </table>
+        <input type="submit" class="btn btn-black" value="Submit">
+    </form>
+{% endblock %}
+
+alert.html code is (iss file ko hum views.py main save hone ke baad add krnge template.get ke throungh )
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+alert("Record added Successfully");  ----->(data table main add hone ke baad ye msg show kre jisse ye pata chale ki humra data save ho chuka hai)
+window.location.href=('http://90.0.0.178:8000/forms/');--->(save hone ke baad ye dubar index.html main le jata hain.)
+</script>
+
+</body>
+</html>
+
+
+

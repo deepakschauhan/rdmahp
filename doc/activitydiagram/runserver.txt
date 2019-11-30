@@ -1,0 +1,13 @@
+server ko run krene ke liye ap ko project ki directroy main jana hoga jaha manage.py file hoti hain 
+
+local system main ap server run kr rhe hain to apko ye command use krni hogi
+ye cmd use krne pr apko https://127.0.0.0:8000 pe apko access krna hoga aur iske aage apne project ka url dalana hoga jo apne project ke urls.py main set kiya hai.
+
+ local run server command:
+ $ python manage.py runserver 
+
+
+remote main server run krne ke liye apko server ki ip address add krke run krna hoga ye cmd use krne pr apko https://90.0.0.178:8000 pe apko access krna hoga aur iske aage apne project ka url dalana hoga jo apne project ke urls.py main set kiya hai. 
+  
+  remote run server command:
+ $ python manage.py runserver 90.0.0.178:8000

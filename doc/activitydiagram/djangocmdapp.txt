@@ -1,0 +1,19 @@
+***Creating App in django
+
+Your apps can live anywhere on your Python path. In this tutorial, we'll create our poll app in the dsvvproject directory for simplicity.
+
+To create your app, make sure you're in the dsvvproject directory and type this command:
+
+ $ python manage.py startapp forms
+
+That'll create a directory forms, which is laid out like this:
+ forms/
+    __init__.py
+    admin.py
+    apps.py
+    models.py
+    tests.py
+    views.py
+
+this directory create new files
+ new file name urls.py 

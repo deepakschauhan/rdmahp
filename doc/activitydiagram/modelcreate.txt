@@ -1,0 +1,29 @@
+from django.db import models (ye phle se hi hota hai)
+
+
+from django.db import models 
+
+form main combo use krne choice use ese krte hain
+title_choices = (
+    ("Prof.","Professor"),
+    ("Dr.","Doctor"),
+    )
+gender_choices = (
+    ("M","Male"),
+    ("F","Female"),
+    )
+
+class Workshop(models.Model):
+    title = models.CharField(max_length=20,choices = title_choices,default = 'Dr.',)
+    gender = models.CharField(max_length=20,choices = gender_choices,default = 'F',)
+    firstname = models.CharField(max_length=300)
+    lastname = models.CharField(max_length=300)
+    working = models.CharField(max_length=300,null=True,blank=True)
+    education = models.CharField(max_length=300,null=True,blank=True)
+    qualification = models.CharField(max_length=300,null=True,blank=True)    
+
+    ***  web ke form main display krne liye use krenge 
+    class SubscriptionForm(ModelForm):
+    class Meta:
+        model = Workshop
+        fields = ['title', 'gender', 'firstname', 'lastname', 'working', 'education', 'qualification','postaladdress','city','state','pin_code','country','mobile','phone','email'] ****

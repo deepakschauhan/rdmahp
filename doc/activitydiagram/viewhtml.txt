@@ -1,0 +1,40 @@
+from django.shortcuts import render
+from django.http import HttpResponse (http ki view main ese import krte hain )
+from django.template import loader (template ki files ko loader ke help se access krenge)
+from forms.models import SubscriptionForm,Workshop (display datafield ki class,model datafield ki class name main jo file )
+
+
+def index(request):
+    template = loader.get_template('forms/index.html')  ***(template folder ki file ko get kr rhe hai)
+    context = {}
+    return HttpResponse(template.render(context, request)) ***(web main render krne ke liye )
+
+def subscription(request):
+    template = loader.get_template('forms/subscription.html')***(template folder ki file ko get kr rhe hai)
+    sForm = SubscriptionForm() (display datafield ki class ko mention kerenge)
+    context = {"form":sForm} 
+    return HttpResponse(template.render(context, request)) ***(web main render krne ke liye )   
+
+def addSubscription(request): (iss class main field main jo bi data enter hoga vo iss class main add hoga aur database add hoga )
+    s = Workshop() ---------------------> (model datafield class hai aur isko (s virable) main store krge sab datatype main mention krke save ho rha h)
+    s.title = request.POST["title"]
+    s.gender = request.POST["gender"]
+    s.firstname = request.POST["firstname"]
+    s.lastname = request.POST["lastname"]
+    s.working = request.POST["working"]
+    s.education = request.POST["education"]
+    s.qualification = request.POST["qualification"]
+    s.postaladdress = request.POST["postaladdress"]
+    s.city = request.POST["city"]
+    s.state = request.POST["state"]
+    s.pin_code = request.POST["pin_code"]
+    s.country = request.POST["country"]
+    s.mobile = request.POST["mobile"]
+    s.phone = request.POST["phone"]
+    s.email = request.POST["email"]
+    
+    s.save()    
+
+     template = loader.get_template('forms/alert.html')--->(ye template main file ko yaha access esse krenge)
+     context = {}
+     return HttpResponse(template.render(context, request))

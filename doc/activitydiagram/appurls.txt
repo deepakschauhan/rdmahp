@@ -1,0 +1,9 @@
+from django.urls import path
+
+from . import views (views.py ki sari html class ko yaha urls ke sath link krenge)
+
+urlpatterns = [
+ path('', views.index, name='index'),----->(1st value url path dete hain,2nd value index.html file ki class jo views main ha views.index main add krnge , 3rd value name kuch bhi use kr skte hain)
+ path('subscription/', views.subscription, name='subscription'),----->(1st value url path dete hain,2nd value subscription.html file ki class jo views main ha views.index main add krnge , 3rd value name kuch bhi use kr skte hain)
+ path('subscription/add/', views.addSubscription, name='subscription/add'),----->(1st value url path dete hain,2nd value subscription.html file ki class jo views main ha views.index main add krnge , 3rd value name kuch bhi use kr skte hain)
+]

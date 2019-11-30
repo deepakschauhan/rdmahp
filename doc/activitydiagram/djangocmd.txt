@@ -1,0 +1,56 @@
+Step 4 — Creating a Django Test Project
+
+Starting the Project
+
+We now can generate an application using django-admin, a command line utility for administration tasks in Python. Then we can use the startproject command to create the project directory structure for our test website
+
+While in the django-apps directory, run the following command:
+
+$ django-admin startproject dsvvproject
+
+(Note: Running the django-admin startproject <projectname> command will name both project directory and project package the <projectname> and create the project in the directory in which the command was run. If the optional <destination> parameter is provided, Django will use the provided destination directory as the project directory, and create manage.py and the project package within it.)
+
+project folder ke ander jayenge 
+
+$ cd dsvvproject
+
+next
+
+$ ls 
+(list of directory)
+Output
+manage.py  dsvvproject
+
+next
+
+cd dsvvproject 
+
+next
+
+$ ls 
+(list of directory)
+Output
+__init__.py __pycache__ setting.py url.py wsgi.py
+
+Let’s go over what each of these files are:
+
+   * __init__.py acts as the entry point for your Python project.
+   * settings.py describes the configuration of your Django installation and lets Django know    which settings are available.
+   * urls.py contains a urlpatterns list, that routes and maps URLs to their views.
+   * wsgi.py contains the configuration for the Web Server Gateway Interface. The Web Server     Gateway Interface (WSGI) is the Python platform standard for the deployment of web          servers and applications.
+
+
+(yeh sari main project ki file hai jisse use se web main apne project ko show krvate hai)
+
+go to dsvvproject folder
+
+(main project directory main jate hain jaha manage.py ki file hoti hai) 
+
+While inside the dsvvproject directory, create your virtual environment. Let’s call it env.   
+
+ $ virtualenv env
+
+Now, activate the virtual environment with the following command:
+ 
+ $ source env/bin/activate
+ 

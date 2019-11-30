@@ -1,0 +1,8 @@
+from django.contrib import admin
+from django.urls import include, path (app ke urls ko yaha import esse use krenge)
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),------>(ye vo path hai jisse hum django admin access page aata hai)
+    path('forms/', include('forms.urls')),(ye vo url hain jo humre sare app ki file ya code page ko access krvata hai)
+]

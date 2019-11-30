@@ -1,0 +1,10 @@
+image add kne ke liye hum project directroy main ek static naam ka banayege aur isme sari image store krenge aur vaha se access hum settings.py main add krenge to humre project main vo image access ho jayegi 
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),--->(bahar hi image rhkne pr apko directory ka naam daalna hoga)
+    os.path.join(BASE_DIR, "image"),-->(app static folder main image naam ke folder main image daal kr image ko kisi bhi project main bhi access kr skte h bhi access krenge uske liye apko ye add krna hoga)
+    os.path.join(BASE_DIR, "font"),-->(app static folder main font naam ke folder  main fonts daal kr fonts ko kisi bhi project main bhi access kr skte h uske liye apko ye add krna hoga)
+]
+
+STATIC_URL = '/static/' -------> (ye usse directroy main folder ka naam hain jissme sari image file store hai)

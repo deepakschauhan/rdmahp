@@ -1,0 +1,10 @@
+INSTALLED_APPS = [
+    #'rdmahp.apps.RdmahpConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'forms',--------------------------> (yaha add krna hain apne app ka name aur ye name apko apps.py main milega)
+]
